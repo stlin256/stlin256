@@ -1,5 +1,7 @@
 ![stlin256](./github-metrics.svg)
 
+![LeetCode Stats](https://leetcard.jacoblin.cool/shantoulin?theme=light&site=cn)
+
 
 <!--
 
