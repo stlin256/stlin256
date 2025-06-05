@@ -1,5 +1,7 @@
 ## Hi there 👋
 
+[![stlin256's GitHub stats](https://github-readme-stats.vercel.app/api?username=stlin256)](https://github.com/stlin256/github-readme-stats)
+
 <!--
 **stlin256/stlin256** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
