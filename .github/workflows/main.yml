@@ -1,0 +1,55 @@
+# Visit https://github.com/lowlighter/metrics#-documentation for full reference
+name: Metrics
+on:
+  # Schedule updates (e.g., each hour)
+  schedule: [{cron: "0 * * * *"}] # Runs at the start of every hour
+  # Allow manual run
+  workflow_dispatch:
+  # Run on pushes to main/master branch
+  push: {branches: ["master", "main"]}
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # NECESSARY to commit the generated SVG back to the repo
+
+    steps:
+      - uses: lowlighter/metrics@v3.36.0 # Using a specific recent stable version
+        with:
+          # REQUIRED: Your GitHub token.
+          # Ensure it has the following scopes:
+          #   - repo          (to access repository commit history and languages)
+          #   - read:user     (to access user profile data)
+          #   - public_access (default)
+          #   - (Optional) read:org (if 'user' is an organization or for org-related metrics)
+          token: ${{ secrets.METRICS_TOKEN }}
+
+          # CONFIGURATION OPTIONS FROM YOUR PREVIOUS SETUP:
+          user: stlin256
+          template: classic # Affects overall layout and available sections
+          base: header, activity, community, repositories, metadata # Core sections to display
+          config_timezone: Asia/Shanghai # Important for correct time display
+
+          # Isocalendar Plugin (Contribution calendar)
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year # Display last 6 months
+
+          # Languages Plugin (Detailed language breakdown)
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15 # Max time (seconds) for overall language analysis
+          plugin_languages_analysis_timeout_repositories: 7.5 # Max time (seconds) per repository for analysis
+          plugin_languages_categories: markup, programming # Categories of languages to include
+          plugin_languages_colors: github # Use GitHub's official language colors
+          plugin_languages_limit: 8 # Display top 8 languages
+          plugin_languages_recent_categories: markup, programming # For "recently used" languages
+          plugin_languages_recent_days: 14 # Look back 14 days for recent languages
+          plugin_languages_recent_load: 300 # Max commits to check for recent languages (can be resource-intensive)
+          plugin_languages_sections: most-used # Which language sections to show (e.g., most-used, recently-used)
+          plugin_languages_threshold: 0% # Show all languages, even if usage is < 1%
+
+          # --- OUTPUT OPTIONS (Defaults are usually fine, but good to know) ---
+          # output_path: github-metrics.svg # Default filename, commits to the root
+          # output_action: commit # Default action is to commit the file
+          # commit_message: "Generate metrics: ${{ env.NOW }}" # Example of a custom commit message
+          # commit_branch: ${{ github.ref }} # Commits to the branch that triggered the workflow
