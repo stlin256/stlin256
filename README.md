@@ -1,5 +1,3 @@
-## Hi there 👋
-
 ![stlin256](./github-metrics.svg)
 
 
