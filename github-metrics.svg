@@ -51,7 +51,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M1 2.5A2.5 2.5 0 013.5 0h8.75a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0V1.5h-8a1 1 0 00-1 1v6.708A2.492 2.492 0 013.5 9h3.25a.75.75 0 010 1.5H3.5a1 1 0 100 2h5.75a.75.75 0 010 1.5H3.5A2.5 2.5 0 011 11.5v-9zm13.23 7.79a.75.75 0 001.06-1.06l-2.505-2.505a.75.75 0 00-1.06 0L9.22 9.229a.75.75 0 001.06 1.061l1.225-1.224v6.184a.75.75 0 001.5 0V9.066l1.224 1.224z"/>
                             </svg>
-                            Contributed to 76 repositories
+                            Contributed to 77 repositories
                         </div>
                     </section>
                 </div>
@@ -69,7 +69,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M10.5 7.75a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0zm1.43.75a4.002 4.002 0 01-7.86 0H.75a.75.75 0 110-1.5h3.32a4.001 4.001 0 017.86 0h3.32a.75.75 0 110 1.5h-3.32z"/>
                             </svg>
-                            1486 Commits
+                            1505 Commits
                         </div>
                         <div class="field">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
@@ -145,7 +145,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                                 <path fill-rule="evenodd" d="M2 2.5A2.5 2.5 0 014.5 0h8.75a.75.75 0 01.75.75v12.5a.75.75 0 01-.75.75h-2.5a.75.75 0 110-1.5h1.75v-2h-8a1 1 0 00-.714 1.7.75.75 0 01-1.072 1.05A2.495 2.495 0 012 11.5v-9zm10.5-1V9h-8c-.356 0-.694.074-1 .208V2.5a1 1 0 011-1h8zM5 12.25v3.25a.25.25 0 00.4.2l1.45-1.087a.25.25 0 01.3 0L8.6 15.7a.25.25 0 00.4-.2v-3.25a.25.25 0 00-.25-.25h-3.5a.25.25 0 00-.25.25z"/>
                             </svg>
-                            34 Repositories
+                            35 Repositories
                         </h2>
                         <div class="row">
                             <section>
@@ -219,14 +219,14 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="334.7108739000402" height="8" fill="#e34c26"/>
-                    <rect mask="url(#languages-bar)" x="334.7108739000402" y="0" width="112.3766597093672" height="8" fill="#3572A5"/>
-                    <rect mask="url(#languages-bar)" x="447.08753360940744" y="0" width="6.027127948499341" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="453.1146615579068" y="0" width="3.4481966105584494" height="8" fill="#b07219"/>
-                    <rect mask="url(#languages-bar)" x="456.56285816846525" y="0" width="1.0618084971549575" height="8" fill="#3178c6"/>
-                    <rect mask="url(#languages-bar)" x="457.6246666656202" y="0" width="0.8909462425190127" height="8" fill="#3D6117"/>
-                    <rect mask="url(#languages-bar)" x="458.5156129081392" y="0" width="0.7474297750170481" height="8" fill="#DA5B0B"/>
-                    <rect mask="url(#languages-bar)" x="459.26304268315624" y="0" width="0.7369573168437623" height="8" fill="#663399"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="334.4170881805947" height="8" fill="#e34c26"/>
+                    <rect mask="url(#languages-bar)" x="334.4170881805947" y="0" width="112.27699823686953" height="8" fill="#3572A5"/>
+                    <rect mask="url(#languages-bar)" x="446.69408641746423" y="0" width="6.026651317013459" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="452.7207377344777" y="0" width="3.445138570280704" height="8" fill="#b07219"/>
+                    <rect mask="url(#languages-bar)" x="456.16587630475846" y="0" width="1.424061728821406" height="8" fill="#3178c6"/>
+                    <rect mask="url(#languages-bar)" x="457.5899380335798" y="0" width="0.8901561050058017" height="8" fill="#3D6117"/>
+                    <rect mask="url(#languages-bar)" x="458.4800941385856" y="0" width="0.7731389460352928" height="8" fill="#663399"/>
+                    <rect mask="url(#languages-bar)" x="459.2532330846209" y="0" width="0.7467669153791174" height="8" fill="#DA5B0B"/>
                 </svg>
                 <div class="field center horizontal-wrap fill-width">
                     <div class="field center no-wrap language">
@@ -267,15 +267,15 @@
                     </div>
                     <div class="field center no-wrap language">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                            <path fill="#DA5B0B" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
-                        </svg>
-                        Jupyter Notebook
-                    </div>
-                    <div class="field center no-wrap language">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
                             <path fill="#663399" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                         </svg>
                         CSS
+                    </div>
+                    <div class="field center no-wrap language">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+                            <path fill="#DA5B0B" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                        </svg>
+                        Jupyter Notebook
                     </div>
                 </div>
             </section>
@@ -1306,7 +1306,7 @@
             </section>
             <footer>
                 <span>These metrics include private contributions</span>
-                <span>Last updated 15 Mar 2026, 03:22:59 (timezone Asia/Shanghai) with lowlighter/metrics@3.34.0</span>
+                <span>Last updated 15 Mar 2026, 04:21:15 (timezone Asia/Shanghai) with lowlighter/metrics@3.34.0</span>
             </footer>
         </div>
         <div xmlns="http://www.w3.org/1999/xhtml" id="metrics-end"></div>
