@@ -1,0 +1,100 @@
+name: Metrics
+
+on:
+  # Hourly refresh of the profile statistics card
+  schedule: [{cron: "0 * * * *"}]
+  # Manual runs
+  workflow_dispatch:
+  # Refresh after pushes (the generated commit below does not retrigger this
+  # workflow: it is pushed with GITHUB_TOKEN)
+  push: {branches: ["main", "master"]}
+
+# Never let two runs race over the committed SVG
+concurrency:
+  group: metrics
+  cancel-in-progress: false
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+    permissions:
+      contents: write
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # The upstream action silently renders a card with 0 stars/forks when its
+      # big repository GraphQL query hits the GitHub API timeout (roughly half
+      # of the runs before 2026-11-11) because its retry logic is broken.
+      # See .github/metrics/README.md. Build a locally patched image and let the
+      # action use it below through `use_prebuilt_image: "no"`.
+      - name: Build patched metrics image
+        id: image
+        continue-on-error: true
+        run: bash .github/metrics/create-image.sh
+
+      - name: Render metrics (attempt 1)
+        if: steps.image.outcome == 'success'
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        continue-on-error: true
+        with:
+          use_prebuilt_image: "no"
+          filename: metrics-attempt-1.svg
+          output_action: none
+          debug: yes
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: stlin256
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Shanghai
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+
+      # Second attempt in case GitHub was still timing out during the first one.
+      - name: Render metrics (attempt 2)
+        if: steps.image.outcome == 'success'
+        uses: lowlighter/metrics@65836723097537a54cd8eb90f61839426b4266b6
+        continue-on-error: true
+        with:
+          use_prebuilt_image: "no"
+          filename: metrics-attempt-2.svg
+          output_action: none
+          debug: yes
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: stlin256
+          template: classic
+          base: header, activity, community, repositories, metadata
+          config_timezone: Asia/Shanghai
+          plugin_isocalendar: yes
+          plugin_isocalendar_duration: half-year
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_analysis_timeout_repositories: 7.5
+          plugin_languages_categories: markup, programming
+          plugin_languages_colors: github
+          plugin_languages_limit: 8
+          plugin_languages_recent_categories: markup, programming
+          plugin_languages_recent_days: 14
+          plugin_languages_recent_load: 300
+          plugin_languages_sections: most-used
+          plugin_languages_threshold: 0%
+
+      - name: Commit stats card
+        env:
+          METRICS_TOKEN: ${{ secrets.METRICS_TOKEN }}
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: bash .github/metrics/commit-card.sh
