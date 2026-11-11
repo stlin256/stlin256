@@ -24,7 +24,7 @@ jobs:
     timeout-minutes: 20
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       # The upstream action silently renders a card with 0 stars/forks when its
       # big repository GraphQL query hits the GitHub API timeout (roughly half
