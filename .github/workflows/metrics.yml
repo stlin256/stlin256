@@ -44,7 +44,6 @@ jobs:
           use_prebuilt_image: "no"
           filename: metrics-attempt-1.svg
           output_action: none
-          debug: yes
           token: ${{ secrets.METRICS_TOKEN }}
           user: stlin256
           template: classic
@@ -73,7 +72,6 @@ jobs:
           use_prebuilt_image: "no"
           filename: metrics-attempt-2.svg
           output_action: none
-          debug: yes
           token: ${{ secrets.METRICS_TOKEN }}
           user: stlin256
           template: classic
