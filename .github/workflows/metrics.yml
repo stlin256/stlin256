@@ -48,6 +48,8 @@ jobs:
           user: stlin256
           template: classic
           base: header, activity, community, repositories, metadata
+          # Count stars/forks/releases from forked repositories too (upstream default is `no`)
+          repositories_forks: yes
           config_timezone: Asia/Shanghai
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
@@ -76,6 +78,8 @@ jobs:
           user: stlin256
           template: classic
           base: header, activity, community, repositories, metadata
+          # Count stars/forks/releases from forked repositories too (upstream default is `no`)
+          repositories_forks: yes
           config_timezone: Asia/Shanghai
           plugin_isocalendar: yes
           plugin_isocalendar_duration: half-year
