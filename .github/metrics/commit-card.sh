@@ -17,7 +17,7 @@ if [ -d "${RENDERS_DIR}" ]; then
   sudo chmod -R a+rX "${RENDERS_DIR}" 2>/dev/null || true
 fi
 
-# Expected stargazer count: owned, non-fork repositories (same definition metrics uses).
+# Expected stargazer count: all owned repositories, forks included (same definition metrics uses).
 expected=""
 if [ -n "${METRICS_TOKEN:-}" ]; then
   expected=0
@@ -35,7 +35,7 @@ if [ -n "${METRICS_TOKEN:-}" ]; then
     if [ "${count}" -eq 0 ]; then
       break
     fi
-    page_stars="$(jq '[.[] | select(.fork == false) | .stargazers_count] | add // 0' <<<"${response}")"
+    page_stars="$(jq '[.[] | .stargazers_count] | add // 0' <<<"${response}")"
     expected=$((expected + page_stars))
     if [ "${count}" -lt 100 ]; then
       break

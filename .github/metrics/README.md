@@ -28,8 +28,9 @@ This happened on roughly half of the hourly runs (see the git history of
 2. The workflow runs the action with `use_prebuilt_image: "no"`, which makes the
    action use that local image instead of pulling the unpatched one.
 3. `commit-card.sh` renders up to two attempts and only commits a card whose
-   stargazer total matches the REST API (owned, non-fork repositories). If every
-   attempt fails, nothing is committed, so a good card is never overwritten by zeros.
+   stargazer total matches the REST API (all owned repositories, forks included).
+   If every attempt fails, nothing is committed, so a good card is never
+   overwritten by zeros.
 
 The patched plugin is the upstream file (MIT license) plus the pagination/retry fix;
 `create-image.sh` warns when the upstream file no longer matches the copy this patch
